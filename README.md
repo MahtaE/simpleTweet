@@ -39,7 +39,7 @@ Here's a walkthrough of implemented user stories:
 <img src='https://imgur.com/kTCUuKH.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 <img src='https://imgur.com/AJbzZ4N.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-https://imgur.com/AJbzZ4N
+
 ## Notes
 
 Describe any challenges encountered while building the app.
