@@ -86,6 +86,5 @@ public static final String TAG = "TimelineActivity";
 
             }
         });
-
     }
 }

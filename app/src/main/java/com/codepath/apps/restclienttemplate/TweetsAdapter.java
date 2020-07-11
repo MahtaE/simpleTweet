@@ -38,7 +38,6 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.viewHolder
         Tweet tweet = tweets.get(position);
         //bind the tweet with view holder
         holder.bind(tweet);
-
     }
 
     @Override
@@ -62,7 +61,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.viewHolder
         ImageView ivProfileImage;
         TextView tvBody;
         TextView tvScreenName;
-        TextView tvDate;
+        TextView tvDate;          //tvDate chose insteadof tvTimestamp
 
         public viewHolder(@NonNull View itemView) {
             super(itemView);
