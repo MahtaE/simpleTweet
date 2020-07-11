@@ -49,6 +49,7 @@ public static final String TAG = "TimelineActivity";
             @Override
             public void onRefresh() {
                 Log.i(TAG, "fetching new data");
+                populateHomeTimeline();
             }
         });
         //find the recycle view
@@ -70,16 +71,14 @@ public static final String TAG = "TimelineActivity";
                 JSONArray jsonArray = json.jsonArray;
                 try {
                     adapter.clear();
-                    tweets.addAll(Tweet.fronJsonArray(jsonArray));
+                    tweets.addAll(Tweet.fromJsonArray(jsonArray));
                     // Now we call setRefreshing(false) to signal refresh has finished
                     swipeContainer.setRefreshing(false);
+
                 } catch (JSONException e) {
                     Log.e(TAG, "Json exception", e);
                 }
-
-
             }
-
 
             @Override
             public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
