@@ -1,0 +1,25 @@
+package com.codepath.apps.restclienttemplate.models;
+
+import androidx.room.Dao;
+import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
+import androidx.room.Query;
+
+import com.facebook.stetho.server.LeakyBufferedInputStream;
+
+import java.util.List;
+
+@Dao         //Data access object
+public interface TweetDao {
+
+    @Query("SELECT Tweet.body AS tweet_body, Tweet.createdAt AS tweet_createdAt, Tweet.id As tweet_id, User. * " +
+            "FROM Tweet INNER JOIN User ON Tweet.userID = User.id ORDER BY Tweet.createdAt DESC LIMIT 5")
+    List<TweetWithUser> recentItems();
+
+    @Insert(onConflict =  OnConflictStrategy.REPLACE)
+    void  insertModel(Tweet... tweets);
+
+   @Insert(onConflict =  OnConflictStrategy.REPLACE)
+    void insertModel(User...users);
+
+}

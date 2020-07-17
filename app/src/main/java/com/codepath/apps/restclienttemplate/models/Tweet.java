@@ -1,5 +1,11 @@
 package com.codepath.apps.restclienttemplate.models;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
 import com.codepath.apps.restclienttemplate.TimeFormatter;
 
 import org.json.JSONArray;
@@ -11,10 +17,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Parcel
+@Entity(foreignKeys = @ForeignKey(entity = User.class, parentColumns="id", childColumns ="userID"))
 public class Tweet {
 
+    @ColumnInfo
+    @PrimaryKey
+    public long id;
+
+    @ColumnInfo
     public String body;
+
+    @ColumnInfo
     public String createdAt;
+
+    @ColumnInfo
+    public long userID;
+
+    @Ignore
     public User user;
     // empty constructor needed by the Parceler library
     public Tweet() {}
