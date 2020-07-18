@@ -113,7 +113,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://imgur.com/3JXP5O2.gif'  width='250' alt='Video Walkthrough' />
+<img src='http://imgur.com/3JXP5O2.gif'  width='350' alt='Video Walkthrough' />
 
 
 
