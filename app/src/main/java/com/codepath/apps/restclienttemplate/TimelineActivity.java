@@ -115,11 +115,11 @@ public class TimelineActivity extends AppCompatActivity {
                 JSONArray jsonArray = json.jsonArray;
                 try {
                     final List<Tweet> tweetsFromNetwork = Tweet.fromJsonArray(jsonArray);
-                    adapter.clear();
+                    //adapter.clear();
                     //tweets.addAll(Tweet.fromJsonArray(jsonArray));
                     adapter.addAll(tweetsFromNetwork);
                     // Now we call setRefreshing(false) to signal refresh has finished
-                    swipeContainer.setRefreshing(false);
+                    //swipeContainer.setRefreshing(false);
                     AsyncTask.execute(new Runnable() {
                         @Override
                         public void run() {
@@ -199,7 +199,6 @@ public class TimelineActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             Log.i(TAG, "Save data into database");
-
                             //Insert users first
                             List<User> usersFromNetwork = User.fromJsonTweetArray(tweetsFromNetwork);
                             tweetDao.insertModel(usersFromNetwork.toArray(new User[0]));
